@@ -1,0 +1,26 @@
+{
+  "name": "kvs-consumer",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "build": "tsc",
+    "start": "node dist/index.js"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "@aws-sdk/client-chime-sdk-voice": "^3.450.0",
+    "@aws-sdk/client-dynamodb": "^3.450.0",
+    "@aws-sdk/client-kinesis-video": "^3.449.0",
+    "@aws-sdk/client-kinesis-video-media": "^3.449.0",
+    "@aws-sdk/client-transcribe-streaming": "^3.449.0",
+    "@aws-sdk/client-translate": "^3.481.0",
+    "@types/aws-lambda": "^8.10.126",
+    "@types/fluent-ffmpeg": "^2.1.24",
+    "fastify": "^4.25.2",
+    "fluent-ffmpeg": "^2.1.2"
+  },
+  "devDependencies": {
+    "@types/node": "^20.9.0",
+    "typescript": "^5.2.2"
+  }
+}

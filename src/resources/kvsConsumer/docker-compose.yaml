@@ -1,0 +1,16 @@
+version: '3'
+services:
+  ffmpeg:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    environment:
+      - AWS_PROFILE=isengard
+      - MEETING_TABLE=AmazonChimeSDKKinesisProcessing-databaseResourcesmeetingTable30BCA192-1JREA85JDXNBZ
+      - SIP_MEDIA_APPLICATION_ID=0952225f-531d-4845-a0aa-99ddae4f4569
+      - DEBUG=ffmpeg-stream
+    volumes:
+      - ~/.aws/:/root/.aws:ro
+    ports:
+      - '80:80'
+    command: ['npm', 'start']
