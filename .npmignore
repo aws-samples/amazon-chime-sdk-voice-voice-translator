@@ -20,3 +20,4 @@ tsconfig.tsbuildinfo
 cdk.out/
 .cdk.staging/
 /.gitattributes
+/.projenrc.ts
