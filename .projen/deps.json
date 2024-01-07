@@ -94,6 +94,10 @@
       "type": "runtime"
     },
     {
+      "name": "@aws-sdk/client-translate",
+      "type": "runtime"
+    },
+    {
       "name": "@types/aws-lambda",
       "type": "runtime"
     },
@@ -125,6 +129,10 @@
     },
     {
       "name": "esbuild",
+      "type": "runtime"
+    },
+    {
+      "name": "fastify",
       "type": "runtime"
     },
     {
