@@ -3806,10 +3806,25 @@ prelude-ls@^1.2.1:
   resolved "https://registry.yarnpkg.com/prelude-ls/-/prelude-ls-1.2.1.tgz#debc6489d7a6e6b0e7611888cec880337d316396"
   integrity sha512-vkcDPrRZo1QZLbn5RLGPpg/WmIQ65qoWWhcGKf/b5eplkkarX0m9z8ppCat4mlOqUsWpyNuYgO3VRyrYHSzX5g==
 
-projen@^0.78.9:
-  version "0.78.9"
-  resolved "https://registry.yarnpkg.com/projen/-/projen-0.78.9.tgz#b57209acbc6b60276b413045ecfabd1100c83125"
-  integrity sha512-JeCFvEszVio/BwT0VYYhg/CtOwNNQ6yqtyUwR/WP5cFC5mJjaSRVHyj60JdUsKeF7Fnl9PuKyieDKTPOXxyL0A==
+process-warning@^2.0.0:
+  version "2.3.2"
+  resolved "https://registry.yarnpkg.com/process-warning/-/process-warning-2.3.2.tgz#70d8a3251aab0eafe3a595d8ae2c5d2277f096a5"
+  integrity sha512-n9wh8tvBe5sFmsqlg+XQhaQLumwpqoAUruLwjCopgTmUBjJ/fjtBsJzKleCaIGBOMXYEhp1YfKl4d7rJ5ZKJGA==
+
+process-warning@^3.0.0:
+  version "3.0.0"
+  resolved "https://registry.yarnpkg.com/process-warning/-/process-warning-3.0.0.tgz#96e5b88884187a1dce6f5c3166d611132058710b"
+  integrity sha512-mqn0kFRl0EoqhnL0GQ0veqFHyIN1yig9RHh/InzORTUiZHFRAur+aMtRkELNwGs9aNwKS6tg/An4NYBPGwvtzQ==
+
+process@^0.11.10:
+  version "0.11.10"
+  resolved "https://registry.yarnpkg.com/process/-/process-0.11.10.tgz#7332300e840161bda3e69a1d1d91a7d4bc16f182"
+  integrity sha512-cdGef/drWFoydD1JsMzuFf8100nZl+GT+yacc2bEced5f9Rjk4z+WtFUTBu9PhOi9j/jfmBPu0mMEY4wIdAF8A==
+
+projen@^0.78.11:
+  version "0.78.11"
+  resolved "https://registry.yarnpkg.com/projen/-/projen-0.78.11.tgz#e54566f72e9d18fdc4002d2704555fdb100b84d4"
+  integrity sha512-SfAMFJcXNWwFbt/HYS/bnYiBQK2nS33bp0tWV3j3Eb6mTiiwyEAjMF5l1rp9Fi+zZ1rV6ai2el2kaVQmcl3K3A==
   dependencies:
     "@iarna/toml" "^2.2.5"
     case "^1.6.3"
