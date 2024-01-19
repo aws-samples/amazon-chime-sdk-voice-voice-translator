@@ -166,10 +166,6 @@ export class VoiceConnectorResources extends Construct {
         },
       ],
       encryption: false,
-      loggingConfiguration: {
-        enableMediaMetricLogs: true,
-        enableSIPLogs: true,
-      },
     });
 
     this.phoneNumber.associateWithVoiceConnector(this.voiceConnector);

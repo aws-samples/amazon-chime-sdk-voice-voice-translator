@@ -1,5 +1,5 @@
 /* eslint-disable import/no-extraneous-dependencies */
-import { RemovalPolicy, Duration, Stack } from 'aws-cdk-lib';
+import { RemovalPolicy, Duration, Stack, IgnoreMode } from 'aws-cdk-lib';
 import { Distribution } from 'aws-cdk-lib/aws-cloudfront';
 import {
   CfnIdentityPool,
@@ -79,10 +79,14 @@ export class ServerResources extends Construct {
     });
 
     new BucketDeployment(this, 'assetBucketDeployment', {
-      sources: [Source.asset('src/resources/server/assets')],
+      sources: [
+        Source.asset('src/resources/server/assets', {
+          exclude: ['**/node_modules/**', '**/dist/**'],
+          ignoreMode: IgnoreMode.GIT,
+        }),
+      ],
       destinationBucket: assetBucket,
       retainOnDelete: false,
-      exclude: ['**/node_modules/**', '**/dist/**'],
       memoryLimit: 512,
     });
 
@@ -276,7 +280,6 @@ export class ServerResources extends Construct {
             InitCommand.shellCommand('corepack enable'),
             InitCommand.shellCommand('chmod +x /etc/config_asterisk.sh'),
             InitCommand.shellCommand('/etc/config_asterisk.sh'),
-            InitCommand.shellCommand('apt remove libopusfile0 -y'),
           ]),
         },
       }),

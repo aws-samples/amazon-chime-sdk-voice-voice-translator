@@ -282,6 +282,16 @@ To deploy this demo:
 - ARM processor on build/deploy instance
 - AWS account
 
+## Create Service Linked Role
+
+This demo requires a [service-linked role](https://docs.aws.amazon.com/chime-sdk/latest/ag/using-service-linked-roles-media-pipeline.html) enabled for Amazon Chime SDK media pipelines. If this is not already created for your account, you will need to create it:
+
+```bash
+aws iam create-service-linked-role --aws-service-name mediapipelines.chime.amazonaws.com
+```
+
+## CDK Deployment
+
 ```bash
 yarn launch
 ```
