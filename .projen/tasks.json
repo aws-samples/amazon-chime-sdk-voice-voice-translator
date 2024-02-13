@@ -206,7 +206,7 @@
       },
       "steps": [
         {
-          "exec": "npx npm-check-updates@16 --upgrade --target=minor --peer --dep=dev,peer,prod,optional --filter=@types/node,@typescript-eslint/eslint-plugin,@typescript-eslint/parser,aws-cdk,esbuild,eslint-import-resolver-typescript,eslint-plugin-import,eslint,projen,ts-node,typescript,@aws-sdk/client-bedrock-runtime,@aws-sdk/client-chime-sdk-media-pipelines,@aws-sdk/client-chime-sdk-meetings,@aws-sdk/client-chime-sdk-voice,@aws-sdk/client-cloudwatch,@aws-sdk/client-dynamodb,@aws-sdk/client-ecs,@aws-sdk/client-kinesis-video,@aws-sdk/client-kinesis-video-media,@aws-sdk/client-lambda,@aws-sdk/client-transcribe-streaming,@aws-sdk/client-translate,@types/aws-lambda,aws-cdk-lib,aws-lambda,axios,cdk-amazon-chime-resources,constructs,dotenv,fastify,fluent-ffmpeg,fs-extra"
+          "exec": "npx npm-check-updates@16 --upgrade --target=minor --peer --dep=dev,peer,prod,optional --filter=esbuild,eslint-import-resolver-typescript,eslint-plugin-import,projen,ts-node,typescript,@aws-sdk/client-bedrock-runtime,@aws-sdk/client-chime-sdk-media-pipelines,@aws-sdk/client-chime-sdk-meetings,@aws-sdk/client-chime-sdk-voice,@aws-sdk/client-cloudwatch,@aws-sdk/client-dynamodb,@aws-sdk/client-ecs,@aws-sdk/client-kinesis-video,@aws-sdk/client-kinesis-video-media,@aws-sdk/client-lambda,@aws-sdk/client-transcribe-streaming,@aws-sdk/client-translate,@types/aws-lambda,aws-lambda,axios,cdk-amazon-chime-resources,dotenv,fastify,fluent-ffmpeg,fs-extra"
         },
         {
           "exec": "yarn install --check-files"
