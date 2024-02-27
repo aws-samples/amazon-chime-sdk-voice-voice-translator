@@ -1,5 +1,6 @@
 import {
   joinChimeMeetingSuccessfulHandler,
+  callAndBridgeSuccessfulHandler,
   newInboundCallHandler,
   newOutboundCallHandler,
   speakSuccessfulHandler,
@@ -74,7 +75,8 @@ export const lambdaHandler = async (
       switch (event.ActionData!.Type) {
         case ActionTypes.CALL_AND_BRIDGE:
           console.log('CALL_AND_BRIDGE successful');
-          actions = [];
+          ({ actions, transactionAttributes } =
+            await callAndBridgeSuccessfulHandler(event, transactionAttributes));
           break;
         case ActionTypes.JOIN_CHIME_MEETING:
           console.log('JOIN_CHIME_MEETING successful');

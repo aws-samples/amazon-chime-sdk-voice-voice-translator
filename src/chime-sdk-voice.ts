@@ -44,12 +44,12 @@ export class SIPMediaApplication extends Construct {
     super(scope, id);
 
     const phoneNumberLanguages = [
-      'passthru',
+      // 'passthru',
       'german',
-      'portuguese',
-      'french',
-      'spanish',
-      'hindi',
+      // 'portuguese',
+      // 'french',
+      // 'spanish',
+      // 'hindi',
     ];
 
     phoneNumberLanguages.forEach((language, index) => {

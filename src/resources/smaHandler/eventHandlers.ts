@@ -119,6 +119,16 @@ export async function joinChimeMeetingSuccessfulHandler(
   return { actions, transactionAttributes };
 }
 
+export async function callAndBridgeSuccessfulHandler(
+  event: SipMediaApplicationEvent,
+  transactionAttributes: TranslatorTransactionAttributes,
+) {
+  let actions: Actions[] = [];
+  ({ transactionAttributes } = setCallId(event, transactionAttributes));
+  actions = [];
+  return { actions, transactionAttributes };
+}
+
 export async function speakSuccessfulHandler(
   event: SipMediaApplicationEvent,
   transactionAttributes: TranslatorTransactionAttributes,

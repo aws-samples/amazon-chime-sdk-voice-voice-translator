@@ -205,6 +205,11 @@ export function handleExistingResponse(
     console.log(
       'PreviousInterruption set to true. Playing previous and current messages.',
     );
+    console.info(`callLeg; ${callLeg}`);
+    console.info(`Text; ${event.ActionData!.Parameters.Arguments.Text}`);
+    console.info(
+      `Language; ${event.ActionData!.Parameters.Arguments.Language}`,
+    );
     actions.push(
       speakAction(
         existingCallResponse[0].Text,
@@ -234,6 +239,9 @@ export function handleNewResponse(
   console.log(
     'No existing Response being played. Playing the Request and storing information in TransactionAttributes',
   );
+  console.info(`callLeg; ${callLeg}`);
+  console.info(`Text; ${event.ActionData!.Parameters.Arguments.Text}`);
+  console.info(`Language; ${event.ActionData!.Parameters.Arguments.Language}`);
   transactionAttributes.CallResponse = JSON.stringify([
     createCallResponse(event),
   ]);
