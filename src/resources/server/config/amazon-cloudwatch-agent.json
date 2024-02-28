@@ -8,19 +8,19 @@
 				"collect_list": [
 					{
 						"file_path": "/var/log/cloud-init-output.log",
-						"log_group_name": "/var/log/amazon-chime-sdk-traffic-generator/",
+						"log_group_name": "/var/log/amazon-chime-sdk-voice-voice-translator/",
 						"log_stream_name": "{instance_id}-cloud-init-output",
 						"retention_in_days": 7
 					},
 					{
 						"file_path": "/var/log/asterisk/messages",
-						"log_group_name": "/var/log/amazon-chime-sdk-traffic-generator/",
+						"log_group_name": "/var/log/amazon-chime-sdk-voice-voice-translator/",
 						"log_stream_name": "{instance_id}-messages",
 						"retention_in_days": 7
 					},
 					{
 						"file_path": "/var/log/cloud-init.log",
-						"log_group_name": "/var/log/amazon-chime-sdk-traffic-generator/",
+						"log_group_name": "/var/log/amazon-chime-sdk-voice-voice-translator/",
 						"log_stream_name": "{instance_id}-cloud-init",
 						"retention_in_days": 7
 					}

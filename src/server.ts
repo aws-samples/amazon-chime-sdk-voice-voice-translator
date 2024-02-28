@@ -25,6 +25,7 @@ import {
   Connections,
   Port,
   BlockDeviceVolume,
+  SubnetType,
 } from 'aws-cdk-lib/aws-ec2';
 import {
   ApplicationLoadBalancer,
@@ -139,6 +140,7 @@ export class ServerResources extends Construct {
     const ec2Instance = new Instance(this, 'Instance', {
       vpc: props.vpc,
       instanceType: InstanceType.of(InstanceClass.C7G, InstanceSize.MEDIUM),
+      vpcSubnets: { subnetType: SubnetType.PUBLIC },
       machineImage: ubuntuAmi,
       requireImdsv2: true,
       userData: userData,
