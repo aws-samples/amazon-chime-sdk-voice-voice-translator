@@ -29,7 +29,7 @@ import Fastify from 'fastify';
 import ffmpeg from 'fluent-ffmpeg';
 
 const fastify = Fastify({
-  logger: true,
+  // logger: true,
 });
 
 const AWS_REGION = process.env.AWS_REGION || 'us-east-1';
@@ -123,8 +123,8 @@ async function readKVSConvertWriteAndTranscribe({
     // .on('stderr', (data) => {
     //   console.log(data);
     // })
-    .audioCodec('libopus')
-    .format('opus')
+    .audioCodec('pcm_s16le')
+    .format('s16le')
     .output(outputStream, { end: true })
     .run();
 
@@ -193,7 +193,7 @@ async function startTranscription(
   try {
     const command = new StartStreamTranscriptionCommand({
       LanguageCode: speakerLanguage as LanguageCode,
-      MediaEncoding: MediaEncoding.OGG_OPUS,
+      MediaEncoding: MediaEncoding.PCM,
       MediaSampleRateHertz: 48000,
       AudioStream: audioStream(),
     });
