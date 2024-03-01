@@ -62,7 +62,9 @@ export const handler: Handler = async (event: EventBridge): Promise<null> => {
       switch (event.detail.eventType) {
         case MeetingEventType.MeetingStarted:
           console.log('Meeting Started');
-          await startMediaStreamPipeline(event.detail);
+          if (event.detail.externalMeetingId === 'VoiceVoiceTranslator') {
+            await startMediaStreamPipeline(event.detail);
+          }
           break;
         case MeetingEventType.AttendeeDropped:
           console.log('Attendee Dropped');

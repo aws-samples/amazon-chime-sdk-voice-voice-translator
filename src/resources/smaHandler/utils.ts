@@ -33,7 +33,7 @@ export async function createMeeting() {
       new CreateMeetingWithAttendeesCommand({
         ClientRequestToken: randomUUID(),
         MediaRegion: AWS_REGION,
-        ExternalMeetingId: randomUUID(),
+        ExternalMeetingId: 'VoiceVoiceTranslator',
         Attendees: [{ ExternalUserId: 'InboundCallAttendee' }],
       }),
     );
