@@ -45,10 +45,10 @@ export class SIPMediaApplication extends Construct {
 
     const phoneNumberLanguages = [
       // 'passthru',
-      'german',
+      // 'german',
       // 'portuguese',
       // 'french',
-      // 'spanish',
+      'spanish',
       // 'hindi',
     ];
 

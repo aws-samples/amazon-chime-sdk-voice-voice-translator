@@ -118,7 +118,7 @@ export function convertLanguageToISOCode(language: string): string {
     german: 'de-DE',
     portuguese: 'pt-BR',
     french: 'fr-FR',
-    spanish: 'es-ES',
+    spanish: 'es-US',
     hindi: 'hi-IN',
   };
 
