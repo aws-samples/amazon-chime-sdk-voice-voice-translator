@@ -29,6 +29,7 @@ interface SIPMediaApplicationProps {
   meetingTable: TableV2;
   callCountTable: TableV2;
   voiceConnector: ChimeVoiceConnector;
+  externalNumber: string;
 }
 
 export interface PhoneNumberInfo {
@@ -98,6 +99,7 @@ export class SIPMediaApplication extends Construct {
         LANGUAGE_NUMBERS: JSON.stringify(this.smaPhoneNumbers),
         MEETING_TABLE: props.meetingTable.tableName,
         CALL_COUNT_TABLE: props.callCountTable.tableName,
+        EXTERNAL_NUMBER: props.externalNumber,
         VOICE_CONNECTOR_ARN: `arn:aws:chime:${Stack.of(this).region}:${
           Stack.of(this).account
         }:vc/${props.voiceConnector.voiceConnectorId}`,

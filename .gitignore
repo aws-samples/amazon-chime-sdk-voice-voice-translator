@@ -54,4 +54,5 @@ dependabot.yml
 *.drawio
 .DS_Store
 dist/
+.env
 !/.projenrc.ts

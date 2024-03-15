@@ -1,6 +1,7 @@
 import {
   speakAction,
-  callAndBridgeAction,
+  sipCallAndBridgeAction,
+  pstnCallAndBridgeAction,
   joinChimeMeetingAction,
   hangupAction,
 } from './actions';
@@ -26,6 +27,7 @@ import {
 } from './utils';
 
 const LANGUAGE_NUMBERS = process.env.LANGUAGE_NUMBERS;
+const EXTERNAL_NUMBER = process.env.EXTERNAL_NUMBER || '';
 
 export async function newInboundCallHandler(
   event: SipMediaApplicationEvent,
@@ -220,8 +222,20 @@ export async function callAnsweredHandler(
     event.CallDetails.TransactionId,
     convertLanguageToISOCode(transactionAttributes.ToCallLanguage!),
   );
-  actions = [
-    callAndBridgeAction('+18005551212', transactionAttributes.ToCallNumber!),
-  ];
+  if (EXTERNAL_NUMBER) {
+    actions = [
+      pstnCallAndBridgeAction(
+        event.CallDetails.Participants[0].From,
+        EXTERNAL_NUMBER,
+      ),
+    ];
+  } else {
+    actions = [
+      sipCallAndBridgeAction(
+        '+18005551212',
+        transactionAttributes.ToCallNumber!,
+      ),
+    ];
+  }
   return { actions, transactionAttributes };
 }

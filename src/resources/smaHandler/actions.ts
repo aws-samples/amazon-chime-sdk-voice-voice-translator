@@ -77,7 +77,7 @@ export function joinChimeMeetingAction(
   };
 }
 
-export function callAndBridgeAction(
+export function sipCallAndBridgeAction(
   callingNumber: string,
   toCallNumber: string,
 ) {
@@ -90,6 +90,25 @@ export function callAndBridgeAction(
         {
           BridgeEndpointType: BridgeEndpointType.AWS,
           Arn: VOICE_CONNECTOR_ARN!,
+          Uri: toCallNumber,
+        },
+      ],
+    } as CallAndBridgeActionParameters,
+  };
+}
+
+export function pstnCallAndBridgeAction(
+  callingNumber: string,
+  toCallNumber: string,
+) {
+  return {
+    Type: ActionTypes.CALL_AND_BRIDGE,
+    Parameters: {
+      CallTimeoutSeconds: 30,
+      CallerIdNumber: callingNumber,
+      Endpoints: [
+        {
+          BridgeEndpointType: BridgeEndpointType.PSTN,
           Uri: toCallNumber,
         },
       ],

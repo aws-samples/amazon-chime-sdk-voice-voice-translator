@@ -210,6 +210,11 @@ const createAttendee = async (meetingId: string) => {
       new CreateAttendeeCommand({
         MeetingId: meetingId,
         ExternalUserId: 'OutboundCallAttendee',
+        Capabilities: {
+          Audio: 'SendReceive',
+          Video: 'None',
+          Content: 'None',
+        },
       }),
     );
     console.log('Create Attendee Response:', response);

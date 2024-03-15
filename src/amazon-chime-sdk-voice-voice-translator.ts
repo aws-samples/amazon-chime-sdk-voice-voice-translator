@@ -22,6 +22,7 @@ export interface AmazonChimeSDKVoiceVoiceTranslatorProps extends StackProps {
   logLevel: string;
   sshPubKey: string;
   allowedDomain?: string;
+  externalNumber: string;
 }
 
 export class AmazonChimeSDKVoiceVoiceTranslator extends Stack {
@@ -74,6 +75,7 @@ export class AmazonChimeSDKVoiceVoiceTranslator extends Stack {
         meetingTable: databaseResources.meetingTable,
         callCountTable: databaseResources.callCountTable,
         voiceConnector: voiceConnectorResources.voiceConnector,
+        externalNumber: props.externalNumber,
       },
     );
 
@@ -146,6 +148,7 @@ const props = {
   logLevel: process.env.LOG_LEVEL || '',
   allowedDomain: process.env.ALLOWED_DOMAIN || '',
   sshPubKey: process.env.SSH_PUB_KEY || ' ',
+  externalNumber: process.env.EXTERNAL_NUMBER || '',
 };
 const devEnv = {
   account: process.env.CDK_DEFAULT_ACCOUNT,

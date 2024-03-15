@@ -63,6 +63,7 @@ const common_exclude = [
   '*.drawio',
   '.DS_Store',
   'dist/',
+  '.env',
 ];
 
 project.gitignore.exclude(...common_exclude);

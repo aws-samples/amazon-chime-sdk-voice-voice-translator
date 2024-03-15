@@ -34,7 +34,16 @@ export async function createMeeting() {
         ClientRequestToken: randomUUID(),
         MediaRegion: AWS_REGION,
         ExternalMeetingId: 'VoiceVoiceTranslator',
-        Attendees: [{ ExternalUserId: 'InboundCallAttendee' }],
+        Attendees: [
+          {
+            ExternalUserId: 'InboundCallAttendee',
+            Capabilities: {
+              Audio: 'SendReceive',
+              Video: 'None',
+              Content: 'None',
+            },
+          },
+        ],
       }),
     );
     return meetingInfo;
